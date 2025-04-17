@@ -1,0 +1,317 @@
+/*----------------- configuracion gral ----------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+li {list-style: none;}
+
+p { margin: 0px;}
+  
+hr
+{
+    margin: 0px;
+    color: #262629;
+}
+
+body
+{
+    background: linear-gradient(90deg, #000000ec, #101011);
+    color: white;
+}
+
+/*--------------------------------------- Header --------------------------------------- */
+/* ----------- (Header base) ----------- */
+#header-principal {
+    font-family: 'Montserrat', sans-serif;
+    background: #121212;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#nav-principal {
+    display: flex;
+    gap: 2rem;
+    margin-left: 3rem;
+}
+
+#titulo-principal, #icono-principal
+{
+    letter-spacing: 4px;
+    cursor: pointer;
+}
+
+#nav-principal a {
+    color: #bfbfbf;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+#nav-principal a:hover {
+    color: #ffffff;
+}
+
+.fade-header-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to bottom, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0));
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* ----------- (Buscador) ----------- */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+#header-buscador {
+    background: #1e1e1e;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #2f2f2f;
+    display: flex;
+    align-items: center;
+}
+
+#input-buscador {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    font-size: 15px;
+    width: 220px;
+}
+
+#btn-buscador {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#btn-buscador:hover {
+    transform: scale(1.1);
+}
+
+
+/*------------------------ Seccion bienvenida --------------------- */
+#seccion-bienvenida {
+    position: relative;
+    height: 104vh;
+    /* height: 115vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+} 
+
+.fade-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #101011 100%);
+    z-index: 1;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: -1;
+}
+
+.overlay-negro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+#titulo-bienvenida
+{
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    max-width: 90%;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    background: none;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+#subtexto-bienvenida
+{
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    max-width: 90%;
+    border-radius: 10px;
+    background: none;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    color: #aca9a9;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#btn-bienvenida 
+{
+    position: relative;
+    z-index: 2;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    max-width: 90%;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    margin-top: 2rem;
+    letter-spacing: 2px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 255, 255, 0.8);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 15%;
+    text-align: center;
+}
+
+#btn-bienvenida:hover {
+    transform: scale(1.08);
+    background-color: rgba(0, 255, 255, 0.6);
+}
+
+/*------------------------ Sección de Contenido ------------------------*/
+
+#seccion-contenido {
+    font-family: "Montserrat", sans-serif;
+    padding: 2rem;
+    position: relative;
+    margin-top: -15vh;
+    z-index: 2;
+}
+
+/* Apartados */
+#apartado-mas-populares,
+#apartado-mejor-valoradas,
+#apartado-recomendadas-para-vos {
+    margin-bottom: 4rem;
+}
+
+/* Card General */
+.card {
+    min-width: 250px;
+    background-color: #262629;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.card-img-top {
+    min-height: 350px;
+    max-height: 350px;
+}
+
+.card-title, .card-text, small {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Carruseles (scroll horizontal) */
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+.rated-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+.rated-carousel::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 4px;
+}
+.rated-carousel::-webkit-scrollbar-track {
+    background: transparent;
+}
+.rated-carousel .card {
+    transition: transform 0.2s ease;
+}
+.rated-carousel .card:hover {
+    transform: scale(1.02);
+}
+
+/* Cards tipo "grande" con overlay */
+.card-carrusel-grande {
+    min-height: 400px;
+    max-height: 800px;
+    border: none;
+}
+
+.card-img-carrusel-grande {
+    min-height: 350px;
+    max-height: 500px;
+    border-radius: 8px;
+}
+
+/* Botones laterales de carrusel */
+.btn-carrusel-control {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #00000085;
+    transition: opacity 0.3s ease;
+}
+
+.btn-carrusel-control:hover {
+    opacity: 1;
+}
