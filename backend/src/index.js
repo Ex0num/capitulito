@@ -32,7 +32,7 @@ app.get('/', async (req, res) => {res.json({name: app.get('pkg').name, autor: ap
 app.use('/api/movies', peliculasRoutes);
 
 // --- Port defined --- //
-const PORT = process.env.port || 3101;
+const PORT = process.env.PORT || 3101;
 app.listen(PORT);
 
 console.log('----- Server listening on port -----', PORT);
