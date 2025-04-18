@@ -1,5 +1,5 @@
 console.log("✅ Script cargado correctamente desde index.js");
-const API_BASE = "https://capitulito-9jhuugkfu-ex0nums-projects.vercel.app";
+const API_BASE = "https://capitulito.vercel.app";
 
 document.addEventListener('keydown', function (event) 
 {

@@ -15,10 +15,16 @@ const app = express();
 
 app.use(helmet()); //--- Establece encabezados HTTP de respuesta que ayudan a mitigar ataques de tipo Cross-Site Scripting (XSS), de inyección de contenido (CSP), de secuestro de clics (Clickjacking) ------//
 
-app.use(cors({
-    origin: ['http://localhost:5500', 'http://127.0.0.1:5500', "https://capitulito-frontend.vercel.app", "'https://capitulito-frontend.vercel.app'"],
+app.use(cors(
+{
+    origin: [
+        'http://localhost:5500',
+        'http://127.0.0.1:5500',
+        'https://capitulito-frontend.vercel.app'
+      ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Authorization', 'Content-Type'],
     credentials: true,
-    allowedHeaders: ['Authorization', 'Content-Type']
 })); //---- CORS es una medida de seguridad que restringe cómo los recursos en una página web pueden ser solicitados desde otro dominio diferente al dominio de origen. Es útil cuando tu servidor Express necesita permitir solicitudes de recursos desde orígenes cruzados ---//
 
 app.use(morgan('dev')); //--- Morgan muestra las solicitudes en consola. (DEV-PHASE ONLY) ---//
