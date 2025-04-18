@@ -345,6 +345,10 @@ body
         min-width: unset;
         width: 60%;
     }
+
+    #resultados-busqueda {
+        top: 250px;
+    }
 }
 
 @media (max-width: 768px) {

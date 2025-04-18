@@ -111,3 +111,19 @@ body
     margin-top: 100px;
 }
 
+@media (max-width: 768px) {
+    .player-container {
+        margin-top: 90px;
+    }
+
+    #selector-capitulos {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    #selector-capitulos label {
+        margin: 0 !important;
+    }
+}
