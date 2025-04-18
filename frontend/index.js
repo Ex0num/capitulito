@@ -171,7 +171,7 @@ function reproducir(imdbId, tipo = "movie")
         type: tipo
     }));
 
-    window.location.href = "reproductor.html";
+    window.location.href = "/html/reproductor.html";
 }
 
 //---------------------------------- Obtencion de contenido ----------------------------------//
