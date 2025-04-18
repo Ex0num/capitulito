@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Capitulito | Reproductor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Ícono -->
+    <link rel="icon" href="../assets/images/icon.png">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/reproductor.css">
+</head>
+<body>
+
+    <button onclick="window.location.href='index.html'" class="btn-volver">
+        ⬅ Volver al inicio
+    </button>
+
+    <!-- Botón volver -->
+<button onclick="window.location.href='index.html'" class="btn-volver">
+    ⬅ Volver al inicio
+</button>
+
+    <!-- Inputs de selección de capítulo (solo visible si es serie) -->
+    <div id="selector-capitulos" style="display: none; margin-top: 100px; text-align: center;">
+        <label style="margin-right: 10px;">
+            Temporada:
+            <input type="number" id="input-temporada" min="1" value="1" class="input-selector" style="width: 70px;">
+        </label>
+    
+        <label style="margin-left: 10px;">
+            Episodio:
+            <input type="number" id="input-episodio" min="1" value="1" class="input-selector" style="width: 70px;">
+        </label>
+    </div>    
+
+    <div id="mensaje-disfruta" class="animacion-mensaje">
+        ¡Disfrutalo en la mejor calidad!<br>Gracias por elegirnos.<br><br>
+    </div>    
+    
+    <div class="player-container" id="contenedorIframe">
+        <iframe id="player" allowfullscreen sandbox="allow-scripts allow-same-origin allow-presentation allow-forms allow-modals" allow="encrypted-media"></iframe>
+    </div>
+      
+    <button onclick="window.location.href='index.html'" class="btn-volver">⬅ Volver al inicio</button>
+
+    <div class="mensaje-error" id="mensajeError" style="display: none;">
+        No hemos podido detectar ninguna película o serie seleccionada.<br><br>
+        <button onclick="window.location.href='index.html'" class="btn-volver">⬅ Volver al inicio</button>
+    </div>
+
+    <script src="../js/reproductor.js"></script>
+</body>
+</html>

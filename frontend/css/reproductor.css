@@ -1,0 +1,113 @@
+body 
+{
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-volver 
+{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    background-color: #121212;
+    border: 1px solid #2a2a2a;
+    color: #cccccc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.btn-volver:hover 
+{
+    background-color: #1d1d1d;
+    color: #ffffff;
+}
+
+.animacion-mensaje 
+{
+    font-size: 28px;
+    text-align: center;
+    margin-top: 10vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 998;
+    opacity: 1;
+}
+
+.input-selector 
+{
+    background-color: #121212;
+    border: 1px solid #2a2a2a;
+    color: #cccccc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-left: 8px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input-selector:focus 
+{
+    border-color: #ffffff;
+    background-color: #1d1d1d;
+}
+
+
+@keyframes tracking-out-contract 
+{
+    0% {
+        letter-spacing: normal;
+        opacity: 1;
+    }
+    100% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+}
+
+.player-container 
+{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    max-width: 1080px;        
+    padding-bottom: 45%;    
+    /* height: 0; */
+    display: none;
+    margin-top: 30px;
+}
+
+#player 
+{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.mensaje-error 
+{
+    text-align: center;
+    font-size: 24px;
+    color: #ccc;
+    margin-top: 100px;
+}
+

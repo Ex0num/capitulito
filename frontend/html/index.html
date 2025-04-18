@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
     <!-- Hoja de estilos -->
     <link rel="stylesheet" href="../css/index.css">
@@ -31,495 +32,98 @@
         
                 <nav id="nav-principal">
                     <a href="./index.html">Inicio</a>
-                    <a href="#seccion-peliculas">Películas</a>
-                    <a href="#apartado-mejor-valoradas">Series</a>
+                    <a href="#apartado-mejor-valoradas">Películas</a>
+                    <a href="#apartado-top-series-texto">Series</a>
                 </nav>
             </div>
         
             <div class="header-right">
                 <div id="header-buscador">
                     <input type="text" placeholder="Buscar películas, series..." id="input-buscador">
-                    <button id="btn-buscador"><i class="bi bi-search"></i></button>
+                    <button id="btn-buscador">
+                        <i class="bi bi-search" id="icono-lupa"></i>
+                        <img id="icono-loader" src="../assets/images/loader.gif" style="display: none; width: 18px;" alt="Buscando...">
+                    </button>                    
                 </div>
-            </div>
-            
+            </div>    
             <div class="fade-header-bottom"></div>
         </header>
+        <div id="resultados-busqueda" class="resultados-container"></div>
     </div>
 
     <!-- Seccion bienvenida (fullscreen) -->
     <section id="seccion-bienvenida">
         <video autoplay muted loop id="bg-video">
-            <source src="../assets/videos/background-tron.mp4" type="video/mp4">Tu navegador no soporta el video HTML5.
+            <source src="../assets/videos/background-tron.mp4" type="video/mp4">
         </video>
-        <h1 id="titulo-bienvenida">Las mejores películas y series en tan solo un click.</h1>
-        <p id="subtexto-bienvenida">Accedé al mejor contenido en alta calidad, sin interrupciones ni vueltas. Mirá lo que quieras, cuando quieras.</p>
-        <a href="#seccion-contenido" id="btn-bienvenida">¡Vamos!</a>
+    
+        <div class="contenido-bienvenida">
+            <h1 id="titulo-bienvenida">Las mejores series y películas en tan solo un click.</h1>
+            <p id="subtexto-bienvenida">Accedé al mejor contenido en alta calidad, sin interrupciones ni vueltas. Mirá lo que quieras, cuando quieras.</p>
+            <a href="#seccion-contenido" id="btn-bienvenida">¡Vamos!</a>
+        </div>
+    
         <div class="fade-bottom"></div>
         <div class="overlay-negro"></div>
-    </section>
+    </section>    
 
     <!-- Seccion contenido -->
     <section id="seccion-contenido">
 
-        <!-- Seccion mas populares (peliculas + series) [carrusel 1] -->
+        <!-- Seccion TOP 250 Peliculas [carrusel 1] -->
         <div id="apartado-mas-populares">
-            <!-- 🎥 Más populares -->
-            <h2 class="mb-4">🎥 Más populares</h2>
+            <h2 class="mb-4">🎥 Lo más votado</h2>
             <div class="position-relative">
-            <button class="btn btn-dark btn-carrusel-control start-0" onclick="moverCarrusel('populares', -1)">⬅</button>
-            <div id="populares" class="d-flex flex-nowrap overflow-hidden scroll-smooth">
-               <div class="card me-3">
-                <img src="https://m.media-amazon.com/images/M/MV5BODA5Y2M0NjctNWQzMy00ODRhLWE0MzUtYmE1YTAzZjYyYmQyXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Train Your Dragon">
-                <div class="card-body">
-                    <h6 class="card-title">How to Train Your Dragon (2025)</h6>
-                    <p class="card-text"><small>Mason Thames, Nico Parker</small></p>
-                </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Sell Drugs Online (Fast)">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Sell Drugs Online (2019)</h6>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjA5NDQyMjc2NF5BMl5BanBnXkFtZTcwMjg5ODcyMw@@._V1_.jpg" class="card-img-top" alt="How to Train Your Dragon">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Train Your Dragon (2010)</h6>
-                        <p class="card-text"><small>Jay Baruchel, Gerard Butler</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BODEyY2ZjZGUtNzE1MS00YjhlLTkwYTctMTNkZDVlZWZmOWQyXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Have Sex">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Have Sex (2023)</h6>
-                        <p class="card-text"><small>Anna Antoniades, Mia McKenna-Bruce</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzFmY2ZjMGEtYzA3OS00OGZiLTkwMWItZjk2NDQ3MmQxMjQ5XkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Get Away with Murder">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Get Away with Murder (2014)</h6>
-                        <p class="card-text"><small>Viola Davis, Billy Brown</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNGIzMThjMGEtNGY4NC00NmVmLWFkYzctNDJkNDYyZTNmZmNhXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Train Your Dragon 2">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Train Your Dragon 2 (2014)</h6>
-                        <p class="card-text"><small>Jay Baruchel, Cate Blanchett</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjIwMDIwNjAyOF5BMl5BanBnXkFtZTgwNDE1MDc2NTM@._V1_.jpg" class="card-img-top" alt="The Hidden World">
-                    <div class="card-body">
-                        <h6 class="card-title">The Hidden World (2019)</h6>
-                        <p class="card-text"><small>Jay Baruchel, America Ferrera</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjU4N2IyNDYtZWViOC00YzFkLTk3OWEtNjkzZWIzZjEwY2RjXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="Bookie">
-                    <div class="card-body">
-                        <h6 class="card-title">Bookie (2023)</h6>
-                        <p class="card-text"><small>Sebastian Maniscalco, Omar J. Dorsey</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BODA5Y2M0NjctNWQzMy00ODRhLWE0MzUtYmE1YTAzZjYyYmQyXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Train Your Dragon">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Train Your Dragon (2025)</h6>
-                        <p class="card-text"><small>Mason Thames, Nico Parker</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Sell Drugs Online (Fast)">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Sell Drugs Online (2019)</h6>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjA5NDQyMjc2NF5BMl5BanBnXkFtZTcwMjg5ODcyMw@@._V1_.jpg" class="card-img-top" alt="How to Train Your Dragon">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Train Your Dragon (2010)</h6>
-                        <p class="card-text"><small>Jay Baruchel, Gerard Butler</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BODEyY2ZjZGUtNzE1MS00YjhlLTkwYTctMTNkZDVlZWZmOWQyXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Have Sex">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Have Sex (2023)</h6>
-                        <p class="card-text"><small>Anna Antoniades, Mia McKenna-Bruce</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzFmY2ZjMGEtYzA3OS00OGZiLTkwMWItZjk2NDQ3MmQxMjQ5XkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="How to Get Away with Murder">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Get Away with Murder (2014)</h6>
-                        <p class="card-text"><small>Viola Davis, Billy Brown</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-top" alt="How to Train Your Dragon 2">
-                    <div class="card-body">
-                        <h6 class="card-title">How to Train Your Dragon 2 (2014)</h6>
-                        <p class="card-text"><small>Jay Baruchel, Cate Blanchett</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjIwMDIwNjAyOF5BMl5BanBnXkFtZTgwNDE1MDc2NTM@._V1_.jpg" class="card-img-top" alt="The Hidden World">
-                    <div class="card-body">
-                        <h6 class="card-title">The Hidden World (2019)</h6>
-                        <p class="card-text"><small>Jay Baruchel, America Ferrera</small></p>
-                    </div>
-                </div>
-                <div class="card me-3">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjU4N2IyNDYtZWViOC00YzFkLTk3OWEtNjkzZWIzZjEwY2RjXkEyXkFqcGc@._V1_.jpg" class="card-img-top" alt="Bookie">
-                    <div class="card-body">
-                        <h6 class="card-title">Bookie (2023)</h6>
-                        <p class="card-text"><small>Sebastian Maniscalco, Omar J. Dorsey</small></p>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-dark btn-carrusel-control end-0" onclick="moverCarrusel('populares', 1)">➡</button>
+                <button class="btn btn-dark btn-carrusel-control start-0" onclick="moverCarrusel('populares', -1)">⬅</button>
+                <div id="populares" class="d-flex flex-nowrap overflow-hidden scroll-smooth"></div>
+                <button class="btn btn-dark btn-carrusel-control end-0" onclick="moverCarrusel('populares', 1)">➡</button>
             </div>
         </div>
 
-        <!-- Seccion mejores peliculas (peliculas) [carrusel 2] -->
+        <!-- Seccion TOP MasPopulares Peliculas [carrusel 2] -->
         <div id="apartado-mejor-valoradas">
-            <!-- ⭐ Mejor valoradas -->
-            <h2 class="mb-4">⭐ Mejor valoradas</h2>
+            <h2 class="mb-4">⭐ Lo más popular</h2>
             <div class="position-relative">
-            <button class="btn btn-dark btn-carrusel-control start-0" onclick="moverCarrusel('valoradas', -1)">⬅</button>
-            <div id="valoradas" class="d-flex flex-nowrap overflow-hidden scroll-smooth">
-                <!-- CARD VISUAL -->
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="HTTYD 2">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Train Your Dragon 2</h5>
-                        <p class="card-text mb-0"><small>⭐ 8.3 - 2014</small></p>
-                        <p class="card-text"><small>Jay Baruchel, Cate Blanchett</small></p>
-                    </div>
-                </div>
-        
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzFmY2ZjMGEtYzA3OS00OGZiLTkwMWItZjk2NDQ3MmQxMjQ5XkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTGAWM">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Get Away with Murder</h5>
-                        <p class="card-text mb-0"><small>⭐ 8.1 - 2014–2020</small></p>
-                        <p class="card-text"><small>Viola Davis, Billy Brown</small></p>
-                    </div>
-                </div>
-        
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjNjYmEyZjQtYjRlMS00MmY5LTk1NWEtNjA4ZTgyMjdiZDhmXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTSDO Fast">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Sell Drugs Online</h5>
-                        <p class="card-text mb-0"><small>⭐ 7.9 - 2019–2025</small></p>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-    
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNTUxNzI1MzcwN15BMl5BanBnXkFtZTgwMjA1MTg5NDM@._V1_.jpg" class="card-img-carrusel-grande" alt="HTSDO Fast">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Sell Drugs Online</h5>
-                        <p class="card-text mb-0"><small>⭐ 7.9 - 2019–2025</small></p>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-    
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNGIzMThjMGEtNGY4NC00NmVmLWFkYzctNDJkNDYyZTNmZmNhXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTSDO Fast">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Sell Drugs Online</h5>
-                        <p class="card-text mb-0"><small>⭐ 7.9 - 2019–2025</small></p>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-    
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTSDO Fast">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Sell Drugs Online</h5>
-                        <p class="card-text mb-0"><small>⭐ 7.9 - 2019–2025</small></p>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-    
-                 <!-- CARD VISUAL -->
-                 <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="HTTYD 2">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Train Your Dragon 2</h5>
-                        <p class="card-text mb-0"><small>⭐ 8.3 - 2014</small></p>
-                        <p class="card-text"><small>Jay Baruchel, Cate Blanchett</small></p>
-                    </div>
-                </div>
-        
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzFmY2ZjMGEtYzA3OS00OGZiLTkwMWItZjk2NDQ3MmQxMjQ5XkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTGAWM">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Get Away with Murder</h5>
-                        <p class="card-text mb-0"><small>⭐ 8.1 - 2014–2020</small></p>
-                        <p class="card-text"><small>Viola Davis, Billy Brown</small></p>
-                    </div>
-                </div>
-        
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTSDO Fast">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Sell Drugs Online</h5>
-                        <p class="card-text mb-0"><small>⭐ 7.9 - 2019–2025</small></p>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-    
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTSDO Fast">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Sell Drugs Online</h5>
-                        <p class="card-text mb-0"><small>⭐ 7.9 - 2019–2025</small></p>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-    
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTSDO Fast">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Sell Drugs Online</h5>
-                        <p class="card-text mb-0"><small>⭐ 7.9 - 2019–2025</small></p>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-    
-                <div class="card bg-dark text-white me-3 movie-card-overlay card-carrusel-grande" style="min-width: 400px; max-width: 500px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYWE3YmU3MTUtN2QwNy00ODQ4LThlMWQtMGExMTA5NWI2OTVjXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="HTSDO Fast">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                        <h5 class="card-title mb-1">How to Sell Drugs Online</h5>
-                        <p class="card-text mb-0"><small>⭐ 7.9 - 2019–2025</small></p>
-                        <p class="card-text"><small>Maximilian Mundt, Danilo Kamperidis</small></p>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-dark btn-carrusel-control end-0" onclick="moverCarrusel('valoradas', 1)">➡</button>
+                <button class="btn btn-dark btn-carrusel-control start-0" onclick="moverCarrusel('valoradas', -1)">⬅</button>
+                <div id="valoradas" class="d-flex flex-nowrap overflow-hidden scroll-smooth"></div>
+                <button class="btn btn-dark btn-carrusel-control end-0" onclick="moverCarrusel('valoradas', 1)">➡</button>
             </div>
         </div>
 
-        <!-- Seccion mejores series (series) [carrusel 3] -->
+        <!-- Seccion TOP MasPopulares series [carrusel 3] -->
         <div id="apartado-recomendadas-para-vos">
-            <h2 class="mb-4">🔥 Recomendadas para vos</h2>
+            <h2 class="mb-4">🔥 Para maratonear</h2>
             <div class="position-relative">
-                <!-- Botón izquierda -->
-                <button class="btn btn-dark btn-carrusel-control start-0" onclick="moverCarrusel('recomendadas', -1)">
-                ⬅
-                </button>
-    
-                <!-- Carrusel de tarjetas -->
-                <div id="recomendadas" class="d-flex flex-nowrap overflow-hidden scroll-smooth">
-                <!-- Tus cards acá -->
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMjAxODQ4MDU5NV5BMl5BanBnXkFtZTcwMDU4MjU1MQ@@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BZGRiMDE1NTMtMThmZS00YjE4LWI1ODQtNjRkZGZlOTg2MGE1XkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BODJkMTQ5ZmQtNzQxYy00ZWNlLWI0ZGYtYjU1NzdiMjcyNDRmXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMWYzYTc3N2MtNWYzNy00MTFhLTllOGUtMzg0MTM0MmRkNmFlXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BN2Y4NDUyMjEtOGVlNy00OTYzLWE4MGItYTQ3MjdkMGVmYjA4XkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYzEwZjczOTktYzU1OS00YjJlLTgyY2UtNWEzODBlN2RjZDEwXkEyXkFqcGc@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNTUxNzI1MzcwN15BMl5BanBnXkFtZTgwMjA1MTg5NDM@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <div class="card me-3 movie-card-overlay card-carrusel-grande" style="min-width: 300px; max-width: 300px; border: none;">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_.jpg" class="card-img-carrusel-grande" alt="">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3"
-                    style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);">
-                    <h6 class="card-title">HTTYD 2</h6>
-                    <small>⭐ 8.3</small>
-                    </div>
-                </div>
-                <!-- Agregá más cards como siempre -->
-                </div>
-    
-                <!-- Botón derecha -->
-                <button class="btn btn-dark btn-carrusel-control end-0" onclick="moverCarrusel('recomendadas', 1)">
-                ➡
-                </button>
+                <button class="btn btn-dark btn-carrusel-control start-0" onclick="moverCarrusel('recomendadas', -1)">⬅</button>
+                <div id="recomendadas" class="d-flex flex-nowrap overflow-hidden scroll-smooth"></div>
+                <button class="btn btn-dark btn-carrusel-control end-0" onclick="moverCarrusel('recomendadas', 1)">➡</button>
             </div>
         </div>
-    </section>
-    
-    <script>
-        function moverCarrusel(id, direccion) {
-            const contenedor = document.getElementById(id);
-            const card = contenedor.querySelector('.card');
-            const cantidadCards = 3; // o 2, 4, lo que quieras
-            const scrollAmount = (card.offsetWidth + 16) * cantidadCards;
-            
-            contenedor.scrollBy({
-                left: direccion * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-    </script>
 
+       <!-- Sección TOP 250 Series [carrusel 4] -->
+        <div id="apartado-top-series-texto">
+            <h2 class="mb-4">📺 Clásicos que no te podés perder</h2>
+            <div class="position-relative">
+                <button class="btn btn-dark btn-carrusel-control start-0" onclick="moverCarrusel('topseries', -1)">⬅</button>
+                <div id="topseries" class="d-flex flex-nowrap overflow-hidden scroll-smooth"></div>
+                <button class="btn btn-dark btn-carrusel-control end-0" onclick="moverCarrusel('topseries', 1)">➡</button>
+            </div>
+        </div>
+
+        <hr>
+
+        
+
+    </section>
+
+    <footer class="footer-disclaimer">
+        <p class="texto-disclaimer">
+            Este sitio fue desarrollado con fines educativos y demostrativos.<br>
+            Capitulito no aloja contenido audiovisual ni archivos en sus servidores. Todo el material es proporcionado por un tercero no afiliado.
+        </p>
+        <p class="copyright">© Capitulito 2025 | Todos los derechos reservados.</p>
+    </footer>
+    
     <script src="../js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
