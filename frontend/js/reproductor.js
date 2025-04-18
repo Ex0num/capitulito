@@ -30,14 +30,15 @@ setTimeout(() =>
 
         if (data.type === "tv") 
         {
-            selector.style.display = "block";
+            selector.classList.remove("d-none");
             mostrarIframe(Number(inputTemporada.value), Number(inputEpisodio.value));
         } 
         else 
         {
+            selector.classList.add("d-none");
             mostrarIframe();
-        }
-
+        }   
+        
     }, 1500);
 }, 3000);
 

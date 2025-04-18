@@ -23,19 +23,19 @@
         ⬅ Volver al inicio
     </button>
 
-    <!-- Inputs de selección de capítulo (solo visible si es serie) -->
-    <div id="selector-capitulos" style="display: none; margin-top: 100px; text-align: center;">
-        <label style="margin-right: 10px;">
-            Temporada:
-            <input type="number" id="input-temporada" min="1" value="1" class="input-selector" style="width: 70px;">
-        </label>
-    
-        <label style="margin-left: 10px;">
-            Episodio:
-            <input type="number" id="input-episodio" min="1" value="1" class="input-selector" style="width: 70px;">
-        </label>
-    </div>    
-
+    <div id="selector-capitulos" class="d-none mt-4">
+        <div class="selector-wrapper">
+          <div class="grupo-selector">
+            <label for="input-temporada" class="form-label">Temporada:</label>
+            <input type="number" id="input-temporada" min="1" value="1" class="input-selector">
+          </div>
+          <div class="grupo-selector">
+            <label for="input-episodio" class="form-label">Episodio:</label>
+            <input type="number" id="input-episodio" min="1" value="1" class="input-selector">
+          </div>
+        </div>
+      </div>          
+  
     <div id="mensaje-disfruta" class="animacion-mensaje">
         ¡Disfrutalo en la mejor calidad y sin anuncios!<br>Gracias por elegirnos.<br><br>
     </div>    

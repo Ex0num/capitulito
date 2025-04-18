@@ -49,15 +49,15 @@ body
     opacity: 1;
 }
 
-.input-selector 
-{
+.input-selector {
     background-color: #121212;
     border: 1px solid #2a2a2a;
     color: #cccccc;
     padding: 10px 15px;
     border-radius: 8px;
     font-size: 16px;
-    margin-left: 8px;
+    width: 100px;
+    max-width: 100%;
     font-family: 'Montserrat', sans-serif;
     outline: none;
     transition: border-color 0.3s ease, background-color 0.3s ease;
@@ -111,19 +111,62 @@ body
     margin-top: 100px;
 }
 
+#selector-capitulos {
+    /* ya no hace falta esto */
+    margin-top: 100px;
+    justify-content: baseline; /* esto se reemplaza con bootstrap */
+    gap: 1rem; /* reemplazado con gap-3 */
+}
+
+
+.grupo-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#cap-txt
+{
+    margin-left: 30px;
+}
+
 @media (max-width: 768px) {
+
     .player-container {
         margin-top: 90px;
     }
+}
 
-    #selector-capitulos {
-        display: flex !important;
+
+.selector-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.grupo-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+@media (max-width: 768px) 
+{
+    .selector-wrapper 
+    {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
     }
 
-    #selector-capitulos label {
-        margin: 0 !important;
+    .grupo-selector 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grupo-selector + .grupo-selector 
+    {
+        margin-top: 10px;
     }
 }
