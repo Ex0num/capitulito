@@ -19,14 +19,9 @@
 </head>
 <body>
 
-    <button onclick="window.location.href='index.html'" class="btn-volver">
+    <button onclick="window.location.href='/'" class="btn-volver">
         ⬅ Volver al inicio
     </button>
-
-    <!-- Botón volver -->
-<button onclick="window.location.href='index.html'" class="btn-volver">
-    ⬅ Volver al inicio
-</button>
 
     <!-- Inputs de selección de capítulo (solo visible si es serie) -->
     <div id="selector-capitulos" style="display: none; margin-top: 100px; text-align: center;">
@@ -49,11 +44,11 @@
         <iframe id="player" allowfullscreen sandbox="allow-scripts allow-same-origin allow-presentation allow-forms allow-modals" allow="encrypted-media"></iframe>
     </div>
       
-    <button onclick="window.location.href='index.html'" class="btn-volver">⬅ Volver al inicio</button>
+    <button onclick="window.location.href='/'" class="btn-volver">⬅ Volver al inicio</button>
 
     <div class="mensaje-error" id="mensajeError" style="display: none;">
         No hemos podido detectar ninguna película o serie seleccionada.<br><br>
-        <button onclick="window.location.href='index.html'" class="btn-volver">⬅ Volver al inicio</button>
+        <button onclick="window.location.href='/'" class="btn-volver">⬅ Volver al inicio</button>
     </div>
 
     <script src="../js/reproductor.js"></script>
