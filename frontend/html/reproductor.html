@@ -20,21 +20,21 @@
 <body>
 
     <button onclick="window.location.href='/'" class="btn-volver">
-        ⬅ Volver al inicio
+        Volver al inicio
     </button>
 
     <div id="selector-capitulos" class="d-none mt-4">
         <div class="selector-wrapper">
+            <div class="grupo-selector">
+                <label for="input-temporada" class="form-label" id="label-temporada">Temporada:</label>
+                <input type="number" id="input-temporada" min="1" value="1" class="input-selector">
+            </div>
           <div class="grupo-selector">
-            <label for="input-temporada" class="form-label">Temporada:</label>
-            <input type="number" id="input-temporada" min="1" value="1" class="input-selector">
-          </div>
-          <div class="grupo-selector">
-            <label for="input-episodio" class="form-label">Episodio:</label>
-            <input type="number" id="input-episodio" min="1" value="1" class="input-selector">
+                <label for="input-episodio" class="form-label" id="label-episodio">Episodio:</label>
+                <input type="number" id="input-episodio" min="1" value="1" class="input-selector">
           </div>
         </div>
-      </div>          
+    </div>          
   
     <div id="mensaje-disfruta" class="animacion-mensaje">
         ¡Disfrutalo en la mejor calidad y sin anuncios!<br>Gracias por elegirnos.<br><br>
@@ -44,11 +44,11 @@
         <iframe id="player" allowfullscreen sandbox="allow-scripts allow-same-origin allow-presentation allow-forms allow-modals" allow="encrypted-media"></iframe>
     </div>
       
-    <button onclick="window.location.href='/'" class="btn-volver">⬅ Volver al inicio</button>
+    <button onclick="window.location.href='/'" class="btn-volver">Volver al inicio</button>
 
     <div class="mensaje-error" id="mensajeError" style="display: none;">
         No hemos podido detectar ninguna película o serie seleccionada.<br><br>
-        <button onclick="window.location.href='/'" class="btn-volver">⬅ Volver al inicio</button>
+        <button onclick="window.location.href='/'" class="btn-volver">Volver al inicio</button>
     </div>
 
     <script src="../js/reproductor.js"></script>

@@ -10,9 +10,28 @@ const inputTemporada = document.getElementById("input-temporada");
 const inputEpisodio = document.getElementById("input-episodio");
 
 // --- Animación de mensaje --- //
+if (data.type === "tv") 
+{
+    selector.classList.remove("d-none");
+    document.getElementById("input-temporada").style.visibility = "visible";
+    document.getElementById("input-episodio").style.visibility = "visible";
+    document.getElementById("label-temporada").style.visibility = "visible";
+    document.getElementById("label-episodio").style.visibility = "visible";
+    mostrarIframe(Number(inputTemporada.value), Number(inputEpisodio.value));
+} 
+else 
+{
+    selector.classList.add("d-none");
+    document.getElementById("input-temporada").style.visibility = "hidden";
+    document.getElementById("input-episodio").style.visibility = "hidden";
+    document.getElementById("label-temporada").style.visibility = "hidden";
+    document.getElementById("label-episodio").style.visibility = "hidden";
+}
+
 setTimeout(() => 
 {
     mensaje.style.animation = "tracking-out-contract 1.5s ease both";
+
 
     setTimeout(() => 
     {
