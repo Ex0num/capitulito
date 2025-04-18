@@ -361,11 +361,11 @@ body
         flex-direction: column;
         align-items: center;
         gap: 0.6rem;
-        margin-top: 0.8rem; /* 🔹 Espaciado superior del logo */
+        margin-top: 0.8rem; /* Espaciado superior del logo */
     }
 
     #titulo-principal {
-        margin-top: 0.5rem; /* 🔹 Espacio entre logo y "Capitulito" */
+        margin-top: 0.5rem; /* Espacio entre logo y "Capitulito" */
     }
 
     #nav-principal {
@@ -373,7 +373,7 @@ body
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
-        margin: 0.6rem 0; /* 🔹 Espacio arriba y abajo del listado */
+        margin: 0.6rem 0; /* Espacio arriba y abajo del listado */
     }
 
     #nav-principal a {
@@ -382,18 +382,33 @@ body
     }
 
     #input-buscador {
-        width: 90%;  /* 🔹 Más ancho en celular */
+        width: 90%;  /* Mas ancho en celular */
         font-size: 14px;
     }
 
     .header-right {
         justify-content: center;
         width: 100%;
-        margin-bottom: 0.8rem; /* 🔹 Espacio inferior general */
+        margin-bottom: 0.8rem; /* Espacio inferior general */
     }
 
     #header-buscador {
-        width: 90%; /* 🔹 Hace que el contenedor del input se estire también */
+        width: 90%; /* Hace que el contenedor del input se estire también */
+    }
+
+    #populares,
+    #valoradas,
+    #recomendadas,
+    #topseries 
+    {
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch; /* mejora la inercia en iOS */
+    }
+  
+    /* Opcional: para que no se muestren las flechas en mobile */
+    .btn-carrusel-control 
+    {
+      display: none;
     }
 }
 
