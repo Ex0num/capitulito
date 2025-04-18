@@ -1,4 +1,5 @@
 console.log("✅ Script cargado correctamente desde index.js");
+const API_BASE = "https://capitulito-9jhuugkfu-ex0nums-projects.vercel.app";
 
 document.addEventListener('keydown', function (event) 
 {
@@ -101,7 +102,8 @@ async function buscarPeliculas(nombre)
     try 
     {
         console.log(`Buscando: ${nombre}...`);
-        const response = await fetch(`http://localhost:3101/api/movies/search?q=${encodeURIComponent(nombre)}`);
+        // const response = await fetch(`http://localhost:3101/api/movies/search?q=${encodeURIComponent(nombre)}`);
+        const response = await fetch(`${API_BASE}/api/movies/search?q=${encodeURIComponent(nombre)}`);
         const data = await response.json();
 
         if (data.hubo_error) 
@@ -214,7 +216,8 @@ async function cargarPeliculasTop250EnCarrusel()
     try 
     {
         mostrarSkeletons("populares");
-        const response = await fetch("http://localhost:3101/api/movies/best-250-movies");
+        // const response = await fetch("http://localhost:3101/api/movies/best-250-movies");
+        const response = await fetch(`${API_BASE}/api/movies/best-250-movies`);
         const data = await response.json();
 
         if (data.hubo_error) 
@@ -258,7 +261,8 @@ async function cargarPeliculasPopularesEnCarrusel()
     try 
     {
         mostrarSkeletons("valoradas");
-        const response = await fetch("http://localhost:3101/api/movies/most-popular-movies");
+        // const response = await fetch("http://localhost:3101/api/movies/most-popular-movies");
+        const response = await fetch(`${API_BASE}/api/movies/most-popular-movies`);
         const data = await response.json();
         if (data.hubo_error) 
         {
@@ -335,7 +339,8 @@ async function cargarSeriesPopularesEnCarrusel()
     try 
     {
         mostrarSkeletons("recomendadas");
-        const response = await fetch("http://localhost:3101/api/movies/most-popular-series");
+        // const response = await fetch("http://localhost:3101/api/movies/most-popular-series");
+        const response = await fetch(`${API_BASE}/api/movies/most-popular-series`);
         const data = await response.json();
 
         if (data.hubo_error) 
@@ -415,7 +420,8 @@ async function cargarSeriesTopTexto()
     try 
     {
         mostrarSkeletons("topseries");
-        const response = await fetch("http://localhost:3101/api/movies/best-250-series");
+        // const response = await fetch("http://localhost:3101/api/movies/best-250-series");
+        const response = await fetch(`${API_BASE}/api/movies/best-250-series`);
         const data = await response.json();
 
         if (data.hubo_error) 
