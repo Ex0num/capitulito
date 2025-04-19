@@ -145,7 +145,10 @@ function mostrarResultadosDeBusqueda(resultados)
         const div = document.createElement("div");
         div.className = "resultado-card";
 
-        const tipo = item['@type'] === 'TV series' ? 'tv' : 'movie';
+        console.log(item);
+        // const tipo = item['@type'] === 'TV series' ? 'tv' : 'movie';
+        const tipo = item['type']?.toLowerCase().includes('tv') ? 'tv' : 'movie';
+        
         console.log(item);
         div.onclick = () => reproducir(item.id, tipo);
 
