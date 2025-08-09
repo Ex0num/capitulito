@@ -72,7 +72,6 @@ function mostrarIframe(temporada = 1, episodio = 1) {
             id="player"
             src="${src}"
             allowfullscreen
-            sandbox="allow-scripts allow-same-origin allow-presentation allow-forms allow-modals"
             allow="encrypted-media"
             style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;">
         </iframe>
